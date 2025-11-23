@@ -1,0 +1,16 @@
+services:
+  postgres-db:
+    image: postgres:13
+    container_name: life_journey_db
+    restart: always
+    environment:
+      POSTGRES_USER: kenz
+      POSTGRES_PASSWORD: Dehan%4021
+      POSTGRES_DB: life_journey
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,0 +1,8 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "watch": ["src"],
+  "ext": "js,json",
+  "exec": "node --env-file=.env src/server.js"
+}

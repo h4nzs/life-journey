@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String      @id @default(cuid())
+  email     String      @unique
+  password  String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  tokoh     TokohUtama?
+
+  @@map("users")
+}
+
+model TokohUtama {
+  id           String   @id @default(cuid())
+  tekad        String?
+  keimanan     String?
+  kondisi_jiwa String?
+  userId       String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tujuan       Tujuan[]
+
+  @@map("tokoh_utama")
+}
+
+model Tujuan {
+  id           String       @id @default(cuid())
+  jenis_tujuan String
+  hasil        String?
+  tokohId      String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  perjalanan   Perjalanan[]
+  tokoh        TokohUtama   @relation(fields: [tokohId], references: [id], onDelete: Cascade)
+
+  @@map("tujuan")
+}
+
+model Perjalanan {
+  id        String      @id @default(cuid())
+  arah      String
+  ketahanan String?
+  tujuanId  String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  tujuan    Tujuan      @relation(fields: [tujuanId], references: [id], onDelete: Cascade)
+  rintangan Rintangan[]
+
+  @@map("perjalanan")
+}
+
+model Rintangan {
+  id              String     @id @default(cuid())
+  jenis_rintangan String
+  perjalananId    String
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  emosi           Emosi[]
+  perjalanan      Perjalanan @relation(fields: [perjalananId], references: [id], onDelete: Cascade)
+
+  @@map("rintangan")
+}
+
+model Emosi {
+  id          String    @id @default(cuid())
+  jenis_emosi String
+  rintanganId String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  rintangan   Rintangan @relation(fields: [rintanganId], references: [id], onDelete: Cascade)
+
+  @@map("emosi")
+}

@@ -1,0 +1,88 @@
+Aku sudah menyelesaikan project aplikasi “Life Journey Tracker” (fullstack).
+Tugasmu sekarang adalah melakukan FULL AUDIT & VERIFIKASI dari seluruh bagian project berikut:
+
+1. BACKEND (Node.js + Express + Prisma + PostgreSQL)
+2. DATABASE (schema.prisma, migration, relasi, constraint)
+3. FRONTEND (React + Vite + Tailwind)
+4. API CLIENT (fetch/axios)
+5. Flow data dari frontend → API → backend → database → kembali ke UI
+
+Tolong lakukan hal berikut dengan sangat teliti:
+
+====================================================
+🔍 1. CEK KEBENARAN STRUKTUR DAN ARSITEKTUR
+- Apakah struktur folder backend & frontend sudah rapi dan standar?
+- Apakah ada folder/file yang kurang atau tidak konsisten?
+- Apakah penamaan route, model, controller, dan komponen frontend sudah konsisten?
+
+====================================================
+🛠 2. CEK BACKEND SECARA DETAIL
+- Periksa semua route, controller, service, middleware, dan model.
+- Pastikan tidak ada:
+  • typo
+  • import yang tidak ditemukan
+  • fungsi yang tidak pernah dipakai
+  • parameter yang mismatch
+- Pastikan semua endpoint REST sudah terdefinisi jelas.
+- Pastikan auth JWT bekerja untuk semua route yang butuh proteksi.
+- Validasi input sudah benar dan aman (anti SQL injection, anti undefined/null crash).
+
+====================================================
+🗄 3. CEK DATABASE & PRISMA
+- Cocokkan ERD dengan schema.prisma.
+- Apakah field, tipe data, dan relasi sudah sesuai kebutuhan?
+- Pastikan ada:
+  • primary key
+  • foreign key
+  • cascade rule
+  • index yang diperlukan
+- Cek apakah migration yang dihasilkan dapat berjalan tanpa error.
+
+====================================================
+🔗 4. CEK KESESUAIAN BACKEND ↔ FRONTEND
+- Pastikan semua endpoint yang dipanggil frontend benar-benar ada di backend.
+- Pastikan payload (body, params, query) cocok dengan backend.
+- Pastikan response shape (JSON structure) antara backend & frontend sinkron.
+- Cek mismatch berikut: nama field, tipe data, route typo, status code salah.
+
+====================================================
+🖥 5. CEK FRONTEND
+- Pastikan semua page & component memanggil API dengan benar.
+- Cek apakah state management aman dari undefined atau null.
+- Cek apakah form validation sudah benar.
+- Pastikan user flow berjalan lancar:
+  • register
+  • login
+  • buat entry
+  • edit entry
+  • hapus entry
+  • lihat timeline
+  • sinkron data
+
+====================================================
+🐞 6. TEMUKAN BUG / ERROR / POTENSI MASALAH
+Tolong list semua:
+- bug nyata
+- potensi bug
+- race condition
+- mismatch antar fungsi
+- error handling kurang
+- logic salah
+
+====================================================
+🧩 7. FIX & PERBAIKAN
+Setelah menemukan semua masalah:
+- Beri daftar solusi + alasan
+- Tunjukkan versi code yang sudah diperbaiki
+- Pastikan versi final benar-benar clean dan dapat dijalankan
+
+====================================================
+🔁 8. FINAL VERIFICATION
+Setelah perbaikan, lakukan verifikasi ulang:
+- Pastikan tidak ada error yang tersisa
+- Pastikan backend & frontend sudah 100% konsisten
+- Pastikan seluruh flow user berjalan tanpa hambatan
+====================================================
+
+Seluruh output tolong dibuat se-struktural dan se-detail mungkin.
+Jika perlu refactor besar, buatkan versi final project yang sudah bersih.

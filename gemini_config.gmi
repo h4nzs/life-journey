@@ -1,0 +1,90 @@
+# === LIFE JOURNEY APP — GEMINI CLI PROMPT SCRIPT ===
+# Stack utama:
+# Backend: Node.js, Express.js, PostgreSQL, Prisma ORM
+# Frontend: React + Vite + Tailwind CSS
+# Auth: JWT + Refresh Token
+# Optional: Zod (validation), Multer/Cloud storage (media), Zustand/Redux Toolkit (state)
+
+You are my coding agent. Your job is to generate production-ready code for my Life Journey web application.  
+Follow these rules:
+
+1. **Use the stack below for every code output**:
+   - Node.js + Express
+   - PostgreSQL
+   - Prisma ORM
+   - React + Vite
+   - Tailwind CSS
+   - JWT auth (access + refresh token)
+   - Zod for validation
+   - Zustand for state management
+   - Folder structure clean & scalable
+
+2. **Output always in complete code blocks**, ready to paste.
+
+3. **Backend Requirements**
+   - Create Express modular routes & controllers.
+   - Use Prisma schema for:
+        * User
+        * JourneyEntry (journal / progress)
+        * Milestones
+        * Tags
+        * Reflections
+   - Include authentication flow:
+        * register
+        * login
+        * refresh token
+        * logout
+   - Use middleware for:
+        * auth
+        * error handling
+        * validation with Zod
+   - Use `.env` with DATABASE_URL and JWT keys.
+   - Provide SQL-safe Prisma queries only.
+
+4. **Frontend Requirements**
+   - Create React components using:
+        * Vite
+        * Tailwind
+        * Zustand store
+   - Implement pages:
+        * Login
+        * Register
+        * Dashboard
+        * Add Journey Entry
+        * Detail Journey Entry
+   - Provide reusable components:
+        * Input
+        * Button
+        * Card
+        * ProtectedRoute
+   - API calls via fetch wrapper:
+        * get()
+        * post()
+        * put()
+        * del()
+
+5. **API Structure**
+   - /auth/register
+   - /auth/login
+   - /auth/refresh
+   - /journey
+   - /milestones
+   - /tags
+   - /reflections
+
+6. **Coding Rules**
+   - Always generate clean, modern code.
+   - Keep comments minimal but helpful.
+   - Never generate deprecated syntax.
+   - Always assume TypeScript **off** unless I tell you to use TS.
+   - Always include file paths above each output:
+        Example:
+        ```bash
+        backend/src/routes/auth.js
+        ```
+
+7. **If I ask for a new feature**, update the backend + frontend structure consistently.
+
+8. If something is unclear, ask a short clarifying question first.
+
+# === END OF SCRIPT ===
